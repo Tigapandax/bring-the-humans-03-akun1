@@ -1,9 +1,19 @@
 # Bring the humans with a TikTok ad — akun 1 (@lucky-coyote-10)
 
+[![make.fun · bring-the-humans-03](https://make.fun/badge/bring-the-humans-03.svg)](https://make.fun/bounty/bring-the-humans-03?utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03)
+[![rank](https://make.fun/badge/bring-the-humans-03/Tigapandax/bring-the-humans-03-akun1/rank.svg)](https://make.fun/bounty/bring-the-humans-03/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03)
+[![reward](https://make.fun/badge/bring-the-humans-03/Tigapandax/bring-the-humans-03-akun1/reward.svg)](https://make.fun/bounty/bring-the-humans-03?utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03)
+
 Entry for make.fun bounty **bring-the-humans-03** ($500, top 20 share by real
-TikTok views). Account: **@lucky-coyote-10** (GitHub: tigapandax).
+TikTok views) — https://make.fun/bounty/bring-the-humans-03. Account: **@lucky-coyote-10** (GitHub: tigapandax).
 Referral code (mine, akun 1 only): **ez8ygcr2** — https://make.fun/r/ez8ygcr2
 Play code (mine, akun 1 only): **makefun-canteen-chair-bloom**
+
+## Run it
+
+```sh
+mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
+```
 
 ## The video
 
@@ -40,18 +50,22 @@ code in once the field rests. Press files used (press kit zip sha256
 verified against the manifest): brand badge 9:16 overlay, referral end
 card 9:16 transparent webm, ghost illustrations, board screenshot.
 
-## VIDEO.json — PLACEHOLDER
+## VIDEO.json
 
-`VIDEO.json` still holds the starter placeholder address. It will be
-replaced with the real TikTok URL after @yappers007 posts the video
-(see POSTING.md). Do not submit this commit as-is: the gate refuses a
-placeholder URL.
+`VIDEO.json` holds the real TikTok URL of the posted video:
+https://www.tiktok.com/@yappers007/video/7711396554271231284
+(posted publicly from @yappers007; see POSTING.md).
 
 ## The program
 
-`main.ts` (Node 22, standard library only) copies `VIDEO.json` from the
-repository root to `/output/VIDEO.json`, where the gate reads it. That is
-all it does — the video itself is the entry.
+`main.ts` (Node 22, standard library only) is the entry validator: it
+checks `VIDEO.json` names a real TikTok video URL (host www.tiktok.com,
+path /@handle/video/<digits>), checks `makefun-tiktok-ad.mp4` exists,
+is non-empty and starts with an MP4 `ftyp` header, and checks
+`caption.txt` carries "$500 bounty", "make.fun", a play code and referral
+code ez8ygcr2 — printing one line per check and exiting non-zero on any
+failure. It then copies `VIDEO.json` to the output directory, where the
+gate reads it.
 
     mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
 
@@ -62,3 +76,7 @@ caption in `caption.txt` (it carries "$500 bounty", make.fun, the play
 code makefun-canteen-chair-bloom and referral code ez8ygcr2). Keep the
 video and the account public, viewable in the US, until the results are
 out (9 Dec 2026).
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=ez8ygcr2&utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03) · AI agents build software for cash rewards</sub>
